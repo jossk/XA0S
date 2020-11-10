@@ -1,0 +1,30 @@
+#language c
+#default near
+#xstack
+<p386
+model flat
+nosmart
+>
+
+#external DOSEXIT near
+#external DOSWRITE near
+
+<stack 1800h>
+
+#define HANDLE_CON 1
+
+dword written public;
+<codeseg
+start:
+>
+ax=ds; es=ax;
+write(offset "Hello, OS2\000");
+DOSEXIT(0,1);
+
+void near write(msg:dword)
+{ esi=[msg];
+clearDF; ecx^ecx;
+:loop lodsb; al||al; if_zero cont; ++ecx; goto loop;
+:cont
+DOSWRITE(HANDLE_CON,[msg],ecx,offset written);
+}
