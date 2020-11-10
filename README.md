@@ -1,5 +1,5 @@
 # XA0S
-Last two source code of XA0S assembler ...
+Last two source code of XA0S assembler :( Please send me binary copy if found this DOS's artifact
 
 https://groups.google.com/g/fido7.talks.asm/c/PQofia_CzPQ/m/CAPCQhjqFCsJ
 and
