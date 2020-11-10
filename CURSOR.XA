@@ -1,0 +1,7 @@
+void cursorOff()
+{ ah=1; ch=20h; interrupt 10h;
+}
+
+void cursorOn()
+{ ah=1; ch=7; cl=8; interrupt 10h;
+}
